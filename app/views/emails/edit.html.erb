@@ -1,0 +1,10 @@
+<h2>Edit</h2>
+<%= form_for(@email,remote:true) do |f| %>
+    <%= f.text_field :name, class: 'form-control form-group',placeholder:"Name",required:true %>
+    <%= f.text_field :to, class: 'form-control form-group',placeholder:"To",required:true %>
+    <%=f.select :whom,[["Old", "Old"],["Young", "Young"], ["Customer", "Customer"]],class: 'form-control form-group',placeholder:"Who to send",required:true %>
+    <%=f.select :purpose,[["Sales", "Sales"],["Thanks", "Thanks"],["Announcement", "Announcement"],["Request", "Request"]],class: 'form-control form-group',placeholder:"What is the purpose of sending",required:true %>
+    <%= f.text_field :subject, class: 'form-control form-group',placeholder:"Subject",required:true %>
+    <%= f.text_area :body, class: 'form-control form-group',placeholder:"Body",required:true %>
+    <%= f.submit 'done', class: "btn btn-large bg-info" %>
+<%end%>

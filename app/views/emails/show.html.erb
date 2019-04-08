@@ -1,0 +1,7 @@
+
+To:<%=@email.to%>
+Name:<%=@email.name%>
+Subject:<%=@email.subject%>
+Body:<%=@email.body%>
+<%=link_to 'Send this',email_send_email_path(email_id:@email.id) ,class: "btn btn-large bg-info" %>
+<%=link_to 'Edit',edit_email_path(email_id:@email.id) ,class: "btn btn-large bg-primary" %>

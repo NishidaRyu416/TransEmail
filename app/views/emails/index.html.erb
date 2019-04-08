@@ -1,0 +1,40 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">To</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Body</th>
+      <th scope="col">Send</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%@emails.each do |email|%>
+    <tr>
+    <th scope="row">
+    </th>
+    <td>
+    <%=email.to%>
+    </td>
+    <td>
+    <%=email.name%>
+    </td>
+    <td>
+    <%=email.subject%>
+    </td>
+    <td>
+    <%=email.body%>
+    </td>
+    <td>
+    <%=link_to 'Send this',email_send_email_path(email_id:email.id) ,class: "btn btn-large bg-info" %>
+    </td>
+    <td>
+    <%=link_to 'Edit',edit_email_path(id:email.id) ,class: "btn btn-large bg-primary" %>
+    </td>
+    </tr>
+    <%end%>      
+  </tbody>
+</table>
+

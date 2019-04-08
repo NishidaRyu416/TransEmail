@@ -1,0 +1,2 @@
+module SuggestionService
+end
